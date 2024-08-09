@@ -32,13 +32,7 @@ namespace GameDashboard.Persistence.Context
             _client = new MongoClient(settings);
 
             Database = _client.GetDatabase(mongoDatabaseName);
-
-            var collection =
-                 Database.GetCollection<Building>("Buildings");
-            var indexOptions = new CreateIndexOptions { Unique = true };
-            var indexKeys = Builders<Building>.IndexKeys.Ascending(b => b.BuildingTypeId);
-            var indexModel = new CreateIndexModel<Building>(indexKeys, indexOptions);
-            collection.Indexes.CreateOne(indexModel);
+            
         }       
       
     }

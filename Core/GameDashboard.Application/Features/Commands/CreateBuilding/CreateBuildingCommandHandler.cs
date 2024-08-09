@@ -52,7 +52,8 @@ namespace GameDashboard.Application.Features.Commands.CreateBuilding
 
             var filter = filterBuilder.And(
                 filterBuilder.Ne(b => b.DataStatus, DataStatus.Deleted),
-                filterBuilder.Eq(b => b.BuildingTypeId, request.BuildingTypeId));
+                filterBuilder.Eq(b => b.BuildingTypeId, request.BuildingTypeId),
+                filterBuilder.Eq(b => b.UserId, request.UserId));
 
             var existBuilder = await _buildingRepository.GetAllAsync(filter);
 
