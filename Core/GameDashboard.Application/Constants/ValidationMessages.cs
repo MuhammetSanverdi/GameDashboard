@@ -2,8 +2,6 @@
 {
     public static class ValidationMessages
     {
-        public static readonly string CompanyAlreadyExists = "Company already exists.";
-        public static readonly string DateInvalid = "Please enter a valid date. The valid date is 01.01.1990 or later.";
 
         public static readonly string EmailAddressInvalid = "Invalid email address.";
         public static readonly string PasswordsNotMatched = "Passwords do not matched.";
